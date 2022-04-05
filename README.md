@@ -1,7 +1,7 @@
 запрос(ы) для *вставки* данных минимум о двух книгах в коллекцию **books**
 
 books.insertMany(
-   {
+   [{
      title: "First book",
 	 description: "story",
 	 authors: "Ivanov",
@@ -12,7 +12,7 @@ books.insertMany(
 	 description: "novel",
 	 authors: "Smith",
 	 id: 2
-   }
+   }]
 )  
 
  - запрос для *поиска* полей документов коллекции **books** по полю *title*  
@@ -24,8 +24,7 @@ books.insertMany(
  - запрос для *редактирования* полей: *description* и *authors* коллекции **books** по *_id* записи
       books.updateOne(
 	           {id: {$eq: 1}},
-			   {$set: {description: "new description"},
-			          {authors: "Pierro"}
+			   {$set: {description: "new description", authors: "Pierro"},
 			   }
 	  )  
 	  
